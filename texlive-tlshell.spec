@@ -1,6 +1,6 @@
 Name:		texlive-tlshell
 Version:	62795
-Release:	1
+Release:	2
 Summary:	GUI frontend (tcl/tk-based) for tlmgr
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tlshell
