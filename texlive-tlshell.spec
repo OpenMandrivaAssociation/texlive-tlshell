@@ -3,7 +3,7 @@ Version:	62795
 Release:	2
 Summary:	GUI frontend (tcl/tk-based) for tlmgr
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tlshell
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tlshell
 License:	
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tlshell.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tlshell.doc.r%{version}.tar.xz
