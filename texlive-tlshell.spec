@@ -1,34 +1,20 @@
-Name:		texlive-tlshell
-Version:	62795
-Release:	2
+%global tl_name tlshell
+%global tl_revision 78053
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	GUI frontend (tcl/tk-based) for tlmgr
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tlshell
-License:	
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tlshell.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tlshell.doc.r%{version}.tar.xz
+URL:		https://www.ctan.org/pkg/tlshell
+License:	LPPL
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tlshell.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tlshell.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(tlshell.bin)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
+GUI frontend (tcl/tk-based) for tlmgr
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_datadir}
-cp -a texmf-dist %{buildroot}%{_datadir}
-
-%files
-%{_texmfdistdir}/texmf-dist/scripts/tlshell
-%doc %{_texmfdistdir}/texmf-dist/doc/support/tlshell
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
