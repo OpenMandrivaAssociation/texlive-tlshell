@@ -1,5 +1,6 @@
 %global tl_name tlshell
 %global tl_revision 78053
+%global tl_bin_links tlshell:%{_texmfdistdir}/scripts/tlshell/tlshell.tcl
 
 Name:		texlive-%{tl_name}
 Version:	%{tl_revision}
@@ -14,6 +15,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(tlshell.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 GUI frontend (tcl/tk-based) for tlmgr
